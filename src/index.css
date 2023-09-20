@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'DM Sans', sans-serif;
+    @apply text-fs-0 leading-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded border-transparent border-2 bg-primary-500 px-4 py-2 font-semibold text-white transition-all hover:bg-transparent hover:border-primary-500 hover:text-black focus:outline-primary-500 
+    focus:border-primary-500 focus:bg-transparent focus:text-black;
+  }
+
+  .btn-secondary {
+    @apply rounded border-primary-500 border-2 bg-transparent px-4 py-2 font-semibold text-black transition-all hover:bg-primary-500 hover:text-white focus:border-transparent focus:outline-primary-500;
+  }
+
+  .input-label {
+    @apply text-base font-medium;
+  }
+
+  .input {
+    @apply w-full rounded-md border border-slate-400 bg-transparent px-4 py-2 caret-primary-500 shadow outline-none focus:border-primary-500;
+  }
+}

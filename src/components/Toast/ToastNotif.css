@@ -1,0 +1,14 @@
+.Toastify__toast-container {
+  font-size: clamp(1rem, calc(0.91rem + 0.43vw), 1.25rem);
+}
+
+@media screen and (max-width: 479px) {
+  .Toastify__toast-container--top-right {
+    top: 1rem;
+  }
+
+  .Toastify__toast-container {
+    width: 70vw;
+    margin-left: auto;
+  }
+}
