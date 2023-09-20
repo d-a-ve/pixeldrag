@@ -11,7 +11,6 @@ const useDragAndDrop = (
   const currentUser = useAuth();
 
   const handleDragEnd = (event: DragEndEvent) => {
-    console.log("End ran");
     const { active, over } = event;
 
     if (over && active.id !== over.id) {
@@ -25,7 +24,7 @@ const useDragAndDrop = (
 
   const handleCancelDrag = () => {
     // remember to change this back later!
-    if (currentUser) {
+    if (!currentUser) {
       openModal();
       return true;
     }

@@ -1,0 +1,27 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "printWidth": 80,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": false,
+  "quoteProps": "as-needed",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "jsxBracketSameLine": false,
+  "endOfLine": "lf",
+  "tailwindConfig": "./tailwind.config.js",
+  "tailwindAttributes": ["wrapperClassName", "wrapClassName", "rootClassName"],
+  "tailwindFunctions": ["classNames", "classnames", "twMerge"],
+  "importOrder": ["^react(.*)", "", "<THIRD_PARTY_MODULES>", "", "@/(.*)","", "^[./]"],
+  "'importOrderSeparation'": true,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ],
+  "plugins": ["prettier-plugin-tailwindcss"]
+}

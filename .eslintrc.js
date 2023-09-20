@@ -15,7 +15,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ["react", "react-hooks", "prettier", "@typescript-eslint"],
+  plugins: ["react", "react-hooks", "prettier", "@typescript-eslint", "@trivago/prettier-plugin-sort-imports"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",

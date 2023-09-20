@@ -16,14 +16,13 @@ const Modal = ({ setIsModalOpen }: TModalProps) => {
         </p>
         <p className="text-fs-0">Please log in.</p>
         <div className="flex items-center gap-2 sm:mt-2 sm:flex-col sm:items-start">
-          <Link to="/" className="btn-primary w-full text-center">
+          <Link to="/login" className="btn-primary w-full text-center">
             Login
           </Link>
           <SecondaryButton
             buttonType="button"
             classname="w-full text-center"
             clickFunction={() => {
-              console.log("Back to gallery");
               setIsModalOpen(false);
             }}
           >

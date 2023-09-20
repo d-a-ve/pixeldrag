@@ -5,17 +5,18 @@ import {
   Dispatch,
   SetStateAction,
 } from "react";
-import { Models } from "appwrite";
 
-type IUser = Models.Session;
+import { User } from "@firebase/auth";
 
-export const AuthContext = createContext({} as IUser | undefined);
+export type IUser = User;
+
+export const AuthContext = createContext({} as IUser | null);
 export const AuthSetterContext = createContext<
-  Dispatch<SetStateAction<IUser | undefined>>
->(undefined as unknown as Dispatch<SetStateAction<IUser | undefined>>);
+  Dispatch<SetStateAction<IUser | null>>
+>(undefined as unknown as Dispatch<SetStateAction<IUser | null>>);
 
 const AuthContextProvider = ({ children }: { children: ReactNode }) => {
-  const [currentUser, setCurrentUser] = useState<IUser>();
+  const [currentUser, setCurrentUser] = useState<IUser | null>(null);
 
   return (
     <AuthContext.Provider value={currentUser}>

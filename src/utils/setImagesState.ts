@@ -11,7 +11,7 @@ const setImagesState = (
     if (prev) {
       const oldImagePosition = prev.findIndex((item) => active.id === item.id);
       const newImagePosition = prev.findIndex((item) => over.id === item.id);
-      console.log(oldImagePosition, newImagePosition);
+      
       return arrayMove(prev, oldImagePosition, newImagePosition);
     }
     return prev;

@@ -1,62 +1,121 @@
 export const errorCodes = [
   {
-    code: "400",
-    type: "user_password_mismatch",
-    description:
-      "Passwords do not match. Please check the password and confirm password.",
-    view: "Your passwords do not match. Please ensure they match.",
+    code: "INVALID_LOGIN_CREDENTIALS",
+    error: "auth/invalid-login-credentials",
+    display:
+      "Your login credentials are invalid. Please double-check your email and password and try again.",
   },
   {
-    code: "401",
-    type: "user_blocked",
-    description:
-      "The current user has been blocked. You can unblock the user by making a request to the User API's 'Update User Status' endpoint or in the Appwrite Console's Auth section.",
-    view: "This user is currently blocked. To unblock, use the 'Update User Status' feature in the Appwrite Console or contact support.",
+    code: "CREDENTIAL_ALREADY_IN_USE",
+    error: "auth/credential-already-in-use",
+    display:
+      "This credential is already in use. Please choose a different one.",
   },
   {
-    code: "401",
-    type: "user_invalid_credentials",
-    description: "Invalid credentials. Please check the email and password.",
-    view: "Your email or password is incorrect. Please double-check them.",
+    code: "CREDENTIAL_MISMATCH",
+    error: "auth/custom-token-mismatch",
+    display: "There is an issue with the provided token. Please try again.",
   },
   {
-    code: "404",
-    type: "user_not_found",
-    description: "User with the requested ID could not be found.",
-    view: "The user with the specified ID could not be found.",
+    code: "EMAIL_EXISTS",
+    error: "auth/email-already-in-use",
+    display: "This email is already registered. Please use a different email.",
   },
   {
-    code: "409",
-    type: "user_already_exists",
-    description:
-      "A user with the same id, email, or phone already exists in this project.",
-    view: "A user with the same ID, email, or phone number already exists in this project.",
+    code: "INTERNAL_ERROR",
+    error: "auth/internal-error",
+    display: "An internal error occurred. Please try again later",
   },
   {
-    code: "409",
-    type: "user_email_already_exists",
-    description:
-      "A user with the same email already exists in the current project.",
-    view: "A user with the same email already exists in this project.",
+    code: "INVALID_APP_CREDENTIAL",
+    error: "auth/invalid-app-credential",
+    display:
+      "The app's credential is invalid. Please check your app configuration.",
   },
   {
-    code: "409",
-    type: "user_phone_already_exists",
-    description:
-      "A user with the same phone number already exists in the current project.",
-    view: "A user with the same phone number already exists in this project.",
+    code: "INVALID_AUTH",
+    error: "auth/invalid-user-token",
+    display: "Invalid user token. Please sign in again.",
   },
   {
-    code: "429",
-    type: "general_rate_limit_exceeded",
-    description:
-      "Rate limit for the current endpoint has been exceeded. Please try again after some time.",
-    view: "You've reached the rate limit for this action. Please wait a moment and try again.",
+    code: "INVALID_AUTH_EVENT",
+    error: "auth/invalid-auth-event",
+    display: "Invalid authentication event. Please try again.",
   },
   {
-    code: "500",
-    type: "general_server_error",
-    description: "An internal server error occurred.",
-    view: "Oops! Something went wrong on our end. Please try again later.",
+    code: "INVALID_EMAIL",
+    error: "auth/invalid-email",
+    display: "The provided email is invalid. Please enter a valid email.",
+  },
+  {
+    code: "INVALID_IDP_RESPONSE",
+    error: "auth/invalid-credential",
+    display: "Invalid identity provider response. Please try again.",
+  },
+  {
+    code: "INVALID_PASSWORD",
+    error: "auth/wrong-password",
+    display: "Incorrect password. Please check and try again.",
+  },
+  {
+    code: "NEED_CONFIRMATION",
+    error: "auth/account-exists-with-different-credential",
+    display:
+      "An account with this email already exists with a different sign-in method.",
+  },
+  {
+    code: "NETWORK_REQUEST_FAILED",
+    error: "auth/network-request-failed",
+    display: "Network request failed. Please check your internet connection.",
+  },
+  {
+    code: "REJECTED_CREDENTIAL",
+    error: "auth/rejected-credential",
+    display: "The provided credential is rejected. Please try again.",
+  },
+  {
+    code: "TENANT_ID_MISMATCH",
+    error: "auth/tenant-id-mismatch",
+    display: "Tenant ID mismatch. Please check your configuration.",
+  },
+  {
+    code: "TIMEOUT",
+    error: "auth/timeout",
+    display: "Request timed out. Please try again later.",
+  },
+  {
+    code: "TOKEN_EXPIRED",
+    error: "auth/user-token-expired",
+    display: "Your session has expired. Please sign in again.",
+  },
+  {
+    code: "TOO_MANY_ATTEMPTS_TRY_LATER",
+    error: "auth/too-many-requests",
+    display: "Too many sign-in attempts. Please try again later.",
+  },
+  {
+    code: "USER_DELETED",
+    error: "auth/user-not-found",
+    display: "User not found. Please check your credentials.",
+  },
+  {
+    code: "USER_DISABLED",
+    error: "auth/user-disabled",
+    display: "This account has been disabled. Please contact support.",
+  },
+  {
+    code: "USER_MISMATCH",
+    error: "auth/user-mismatch",
+    display: "User mismatch error. Please sign in again.",
+  },
+  {
+    code: "USER_SIGNED_OUT",
+    error: "auth/user-signed-out",
+    display: "You have been signed out. Please sign in again.",
+  },
+  {
+    code: "WEAK_PASSWORD",
+    error: "auth/weak-password",
+    display: "Your password is too weak. Please choose a stronger password.",
   },
 ];

@@ -1,31 +1,39 @@
-import { authAccount } from "@config/appwriteConfig";
+import { auth } from "@config/firebaseConfig";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "@firebase/auth";
+import { IUser } from "@context/AuthContext";
 
-export async function createUserSession(email: string, password: string) {
-  await authAccount.createEmailSession(email, password);
-}
+export const userSignupWithEmailAndPassword = async (
+  email: string,
+  password: string
+) => {
+  const userSession = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  return userSession;
+};
 
-export async function getUserAccount() {
-  try {
-    const userAccount = await authAccount.get();
-    return userAccount;
-  } catch (error: any) {
-    throw new Error(error);
-  }
-}
+export const userLoginWithEmailAndPassword = async (
+  email: string,
+  password: string
+) => {
+  const userSession = await signInWithEmailAndPassword(auth, email, password);
+  return userSession;
+};
 
-export async function deleteSession() {
-  try {
-    await authAccount.deleteSession("current");
-  } catch (error: any) {
-    throw new Error(error);
-  }
-}
+// current user and it will be null if user isn't signed in
+export const authUser = auth.currentUser;
 
-export async function getSession() {
-  try {
-    const session = await authAccount.getSession("current");
-    return session;
-  } catch (error: any) {
-    throw new Error(error);
-  }
-}
+export const onAuthChanged = (changeFunc: (user: IUser | null) => void) => {
+  onAuthStateChanged(auth, (user) => changeFunc(user));
+};
+
+export const logOut = async () => {
+  await signOut(auth);
+};

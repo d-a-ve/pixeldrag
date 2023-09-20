@@ -1,14 +1,14 @@
 import PrimaryButton from "@components/Button/PrimaryButton";
 import Form from "@components/Form/Form";
 import Input from "@components/Input/Input";
+import AuthLayout from "@components/Layout/AuthLayout";
 import Loader from "@components/Loader/Loader";
 import Logo from "@components/Logo/Logo";
-import AuthLayout from "@components/Layout/AuthLayout";
 import useAuthFunctions from "@hooks/useAuthFunctions";
 import { Link } from "react-router-dom";
 
-const LoginPage = () => {
-  const { login, isLoading } = useAuthFunctions();
+const SignupPage = () => {
+  const { signup, isLoading } = useAuthFunctions();
 
   return (
     <AuthLayout>
@@ -16,20 +16,17 @@ const LoginPage = () => {
         <Logo />
 
         <h2 className="mb-2 mt-8 text-fs-1 font-semibold text-black">
-          Login to view gallery
+          Get Started with Us
         </h2>
         <p>
-          Don't have an account?{" "}
-          <Link
-            to="/signup"
-            className="text-primary-500 transition duration-200 hover:text-primary-700"
-          >
-            Sign up here
+          Already have an account?{" "}
+          <Link to="/login" className="text-primary-500 hover:text-primary-700 transition duration-200">
+            Login here
           </Link>
         </p>
       </div>
 
-      <Form submitFunction={login}>
+      <Form submitFunction={signup}>
         <Input
           labelFor="email"
           labelText="Email"
@@ -44,11 +41,11 @@ const LoginPage = () => {
           required={true}
         />
         <PrimaryButton buttonType="submit">
-          {isLoading ? <Loader dimensions="w-5 h-5" /> : "Login"}
+          {isLoading ? <Loader dimensions="w-5 h-5" /> : "Signup"}
         </PrimaryButton>
       </Form>
     </AuthLayout>
   );
 };
 
-export default LoginPage;
+export default SignupPage;

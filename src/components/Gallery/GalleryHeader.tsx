@@ -2,35 +2,23 @@ import PrimaryButton from "@components/Button/PrimaryButton";
 import Loader from "@components/Loader/Loader";
 import Logo from "@components/Logo/Logo";
 import useAuth from "@hooks/useAuth";
-import useAuthApi from "@hooks/useAuthSetter";
-import { toastSuccess } from "@utils/toastNotifs";
-import { deleteSession } from "@utils/userSessions";
-import { useState } from "react";
+import useAuthFunctions from "@hooks/useAuthFunctions";
 import { Link } from "react-router-dom";
 
 const GalleryHeader = () => {
-  const [loading, setLoading] = useState(false);
   const currentUser = useAuth();
-  const setCurrentUser = useAuthApi();
-
-  const logoutFunc = async () => {
-    setLoading(true);
-    await deleteSession();
-    setLoading(false);
-    setCurrentUser(undefined);
-    toastSuccess("You have successfully logged out");
-  };
+  const { logout, isLoading } = useAuthFunctions();
 
   return (
     <section className="mx-auto mb-8 w-full">
       <div className="mb-8 flex items-center justify-between sm:mb-4">
         <Logo />
         {currentUser ? (
-          <PrimaryButton clickFunction={logoutFunc} buttonType="button">
-            {loading ? <Loader dimensions="w-5 h-5" /> : "Logout"}
+          <PrimaryButton clickFunction={logout} buttonType="button">
+            {isLoading ? <Loader dimensions="w-5 h-5" /> : "Logout"}
           </PrimaryButton>
         ) : (
-          <Link to="/" className="btn-primary">
+          <Link to="/login" className="btn-primary">
             Login
           </Link>
         )}
