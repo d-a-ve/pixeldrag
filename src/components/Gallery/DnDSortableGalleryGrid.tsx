@@ -30,8 +30,8 @@ const DnDSortableGalleryGrid = ({
     }),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 1000,
-        tolerance: 7,
+        delay: 250,
+        tolerance: 5,
       }
     })
   )

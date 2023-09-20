@@ -18,7 +18,7 @@ const GalleryItem = ({ src, alt, tag, id }: TGalleryItem) => {
 
   return (
     <div
-      className="relative touch-none"
+      className="relative touch-manipulation"
       ref={setNodeRef}
       {...attributes}
       {...listeners}
