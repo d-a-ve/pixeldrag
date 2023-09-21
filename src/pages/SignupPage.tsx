@@ -20,7 +20,10 @@ const SignupPage = () => {
         </h2>
         <p>
           Already have an account?{" "}
-          <Link to="/login" className="text-primary-500 hover:text-primary-700 transition duration-200">
+          <Link
+            to="/login"
+            className="text-primary-500 transition duration-200 hover:text-primary-700"
+          >
             Login here
           </Link>
         </p>

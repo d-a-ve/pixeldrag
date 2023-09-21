@@ -21,17 +21,6 @@ module.exports = {
           800: "#2c0f36",
           900: "#16071b",
         },
-        secondary: {
-          100: "#fcf3ff",
-          200: "#f8e7ff",
-          300: "#f5dbfe",
-          400: "#f1cffe",
-          500: "#eec3fe",
-          600: "#be9ccb",
-          700: "#8f7598",
-          800: "#5f4e66",
-          900: "#302733",
-        },
       },
       fontSize: {
         "fs--2": "clamp(0.69rem, calc(0.66rem + 0.18vw), 0.8rem)",

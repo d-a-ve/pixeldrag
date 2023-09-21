@@ -37,7 +37,7 @@ const useAuthFunctions = () => {
           "Form submission failed. Please review the highlighted fields for errors and try again."
         );
       }
-    } catch (error:any) {
+    } catch (error: any) {
       setIsLoading(false);
       const errorMessage = getFirebaseErrorMessage(
         error.code,
@@ -68,7 +68,7 @@ const useAuthFunctions = () => {
           "Form submission failed. Please review the highlighted fields for errors and try again."
         );
       }
-    } catch (error:any) {
+    } catch (error: any) {
       setIsLoading(false);
       const errorMessage = getFirebaseErrorMessage(
         error.code,
@@ -85,7 +85,7 @@ const useAuthFunctions = () => {
       setIsLoading(false);
       setCurrentUser(null);
       toastSuccess("You have successfully logged out");
-    } catch (error:any) {
+    } catch (error: any) {
       setIsLoading(false);
       const errorMessage = getFirebaseErrorMessage(
         error.code,

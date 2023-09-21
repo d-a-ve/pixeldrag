@@ -1,5 +1,12 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import { DndContext, MouseSensor, TouchSensor, closestCenter, useSensor, useSensors } from "@dnd-kit/core";
+import {
+  DndContext,
+  MouseSensor,
+  TouchSensor,
+  closestCenter,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 import { SortableContext } from "@dnd-kit/sortable";
 import GalleryItem from "./GalleryItem";
 import ModalLayout from "@components/Modal/ModalLayout";
@@ -26,15 +33,15 @@ const DnDSortableGalleryGrid = ({
     useSensor(MouseSensor, {
       activationConstraint: {
         distance: 10,
-      }
+      },
     }),
     useSensor(TouchSensor, {
       activationConstraint: {
-        delay: 1000,
-        tolerance: 7,
-      }
+        delay: 250,
+        tolerance: 5,
+      },
     })
-  )
+  );
 
   return (
     <DndContext
