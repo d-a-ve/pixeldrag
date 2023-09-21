@@ -6,7 +6,6 @@ PixelDrag is an image gallery web application that allows users to manage the ga
 
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-  - [Firebase Configuration](#firebase-configuration)
 - [User Authentication](#user-authentication)
 - [Special Characters in Password](#special-characters-in-password)
 
@@ -42,40 +41,40 @@ To get started with PixelDrag, follow these steps:
    npm install
    ```
 
-4. Start the development server:
+4. **Firebase Configuration**:
+
+   - Create a Firebase project on the [Firebase Console](https://console.firebase.google.com/).
+
+   - In your Firebase project settings, locate and copy your Firebase configuration object. It should look something like this:
+
+     ```json
+     const firebaseConfig = {
+       apiKey: "your-api-key",
+       authDomain: "your-auth-domain",
+       projectId: "your-project-id",
+       storageBucket: "your-storage-bucket",
+       messagingSenderId: "your-messaging-sender-id",
+       appId: "your-app-id"
+     };
+     ```
+
+   - In the project directory, find the `firebaseConfig.ts` file located in the `src/configs` folder.
+
+   - Open `firebaseConfig.ts` and replace the existing `firebaseConfig` variable with your Firebase configuration from step 2.
+
+   - Save the file.
+
+5. Start the development server:
 
    ```bash
    npm run dev
    ```
 
-5. Open your web browser and go to `http://localhost:5173` to access PixelDrag.
+6. Open your web browser and go to `http://localhost:5173` to access PixelDrag.
 
-### Firebase Configuration
+> Now, your local development environment is configured to use Firebase for authentication. PixelDrag will use this configuration to interact with Firebase services when running locally.
 
-To run PixelDrag in local development, you'll need to set up your Firebase configuration. Follow these steps:
-
-1. Create a Firebase project on the [Firebase Console](https://console.firebase.google.com/).
-
-2. In your Firebase project settings, locate and copy your Firebase configuration object. It should look something like this:
-
-   ```json
-   const firebaseConfig = {
-     apiKey: "your-api-key",
-     authDomain: "your-auth-domain",
-     projectId: "your-project-id",
-     storageBucket: "your-storage-bucket",
-     messagingSenderId: "your-messaging-sender-id",
-     appId: "your-app-id"
-   };
-   ```
-
-3. In the src directory, find the `firebaseConfig.ts` file located in the `configs` folder.
-
-4. Open `firebaseConfig.ts` and replace the existing `firebaseConfig` variable with your Firebase configuration from step 2.
-
-5. Save the file.
-
-Now, your local development environment is configured to use Firebase for authentication. PixelDrag will use this configuration to interact with Firebase services when running locally.
+> Remember to keep your Firebase configuration secure and avoid sharing sensitive information such as API keys publicly.
 
 ## User Authentication
 
