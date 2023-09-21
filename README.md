@@ -47,7 +47,7 @@ To get started with PixelDrag, follow these steps:
 
    - In your Firebase project settings, locate and copy your Firebase configuration object. It should look something like this:
 
-     ```json
+     ```javascript
      const firebaseConfig = {
        apiKey: "your-api-key",
        authDomain: "your-auth-domain",
@@ -72,7 +72,7 @@ To get started with PixelDrag, follow these steps:
 
 6. Open your web browser and go to `http://localhost:5173` to access PixelDrag.
 
-> Now, your local development environment is configured to use Firebase for authentication. PixelDrag will use this configuration to interact with Firebase services when running locally.
+Now, your local development environment is configured to use Firebase for authentication. PixelDrag will use this configuration to interact with Firebase services when running locally.
 
 > Remember to keep your Firebase configuration secure and avoid sharing sensitive information such as API keys publicly.
 
