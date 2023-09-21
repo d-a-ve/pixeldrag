@@ -16,16 +16,7 @@ const GalleryPage = () => {
       <GalleryHeader />
       <GalleryBody />
       <p className="mt-8 text-center">
-        Built by{" "}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.github.com/d-a-ve/"
-          className="text-primary-500 transition duration-200 hover:text-primary-700"
-        >
-          Dave
-        </a>{" "}
-        for HNG X Zuri Stage 3 Task.
+        Built by Dave for HNG X Zuri Stage 3 Task.
       </p>
     </main>
   );
