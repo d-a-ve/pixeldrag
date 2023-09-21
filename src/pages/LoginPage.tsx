@@ -19,7 +19,7 @@ const LoginPage = () => {
           Login to view gallery
         </h2>
         <p>
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link
             to="/signup"
             className="text-primary-500 transition duration-200 hover:text-primary-700"

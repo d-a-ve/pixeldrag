@@ -11,13 +11,16 @@ const GalleryPage = () => {
 
   useEffect(() => {
     setImages(data);
-    changeAuthState(); 
+    changeAuthState();
   }, [setImages]);
 
   return (
-    <main className=" mx-auto w-auto max-w-5xl px-4 pt-8">
+    <main className=" mx-auto w-auto max-w-5xl px-4 py-8">
       <GalleryHeader />
       <GalleryBody />
+      <p className="mt-8 text-center">
+        Built by Dave for HNG X Zuri Stage 3 Task.
+      </p>
     </main>
   );
 };
