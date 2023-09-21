@@ -9,7 +9,7 @@ const GalleryPage = () => {
 
   useEffect(() => {
     setImages(data);
-  }, [ setImages]);
+  }, [setImages]);
 
   return (
     <main className=" mx-auto w-auto max-w-5xl px-4 pt-8">
