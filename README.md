@@ -58,7 +58,7 @@ To get started with PixelDrag, follow these steps:
      };
      ```
 
-   - In the project directory, find the `firebaseConfig.ts` file located in the `src/configs` folder.
+   - In the project directory, find the `firebaseConfig.ts` file located in the `src/config` folder.
 
    - Open `firebaseConfig.ts` and replace the existing `firebaseConfig` variable with your Firebase configuration from step 2.
 
