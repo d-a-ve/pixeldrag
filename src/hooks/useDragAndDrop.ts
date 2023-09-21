@@ -23,7 +23,6 @@ const useDragAndDrop = (
   };
 
   const handleCancelDrag = () => {
-    // remember to change this back later!
     if (!currentUser) {
       openModal();
       return true;
