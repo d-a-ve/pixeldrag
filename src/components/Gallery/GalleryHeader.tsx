@@ -15,7 +15,7 @@ const GalleryHeader = () => {
         <Logo />
         {currentUser ? (
           <PrimaryButton clickFunction={logout} buttonType="button"
-className="sm:text-fs--1">
+classname="sm:text-fs--1">
             {isLoading ? <Loader dimensions="w-5 h-5" /> : "Logout"}
           </PrimaryButton>
         ) : (
