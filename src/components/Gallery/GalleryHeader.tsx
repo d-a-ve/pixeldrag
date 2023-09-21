@@ -14,11 +14,12 @@ const GalleryHeader = () => {
       <div className="mb-8 flex items-center justify-between sm:mb-4">
         <Logo />
         {currentUser ? (
-          <PrimaryButton clickFunction={logout} buttonType="button">
+          <PrimaryButton clickFunction={logout} buttonType="button"
+className="sm:text-fs--1">
             {isLoading ? <Loader dimensions="w-5 h-5" /> : "Logout"}
           </PrimaryButton>
         ) : (
-          <Link to="/login" className="btn-primary">
+          <Link to="/login" className="btn-primary sm:text-fs--1">
             Login
           </Link>
         )}
