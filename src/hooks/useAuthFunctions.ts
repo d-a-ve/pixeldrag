@@ -6,6 +6,7 @@ import getValidFormData from "@utils/getValidFormData";
 import { toastError, toastSuccess } from "@utils/toastNotifs";
 import {
   logOut,
+  onAuthChanged,
   userLoginWithEmailAndPassword,
   userSignupWithEmailAndPassword,
 } from "@utils/userSessions";
@@ -95,11 +96,18 @@ const useAuthFunctions = () => {
     }
   };
 
+  const changeAuthState = () => {
+    onAuthChanged((user) => {
+      setCurrentUser(user);
+    });
+  }
+
   return {
     isLoading,
     login,
     signup,
     logout,
+    changeAuthState
   };
 };
 
